@@ -1,78 +1,32 @@
 <!DOCTYPE html>
-<!-- This is my portfolio -->
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<link
-			href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap"
-			rel="stylesheet"
-		/>
-		<link rel="stylesheet" href="./styles.css" />
-		<script   src="https://code.jquery.com/jquery-3.5.1.js"   integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="   crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
-		<title>My Portfolio</title>
-	</head>
-	<body>
-		<header>
-			<div class="logo-container">
-				<img src="https://via.placeholder.com/33" alt="logo" />
-				<h4 class="logo">My Logo</h4>
-			</div>
-			<nav id="side-nav">
-				<ul class="nav-links">
-					<li><a class="nav-link" href="#">ABOUT</a></li>
-					<li><a class="nav-link" href="#">WORK</a></li>
-					<li><a class="nav-link" href="#">CONTACT</a></li>
-				</ul>
-			</nav>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="./styles.css" />
+        <title>Portfolio</title>
+    </head>
+    <body>
 
-			<div class="cart" id="menu-toggle">
-				<img src="https://via.placeholder.com/33" alt="button" />
-			</div>
+        <nav>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Work</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
 
-			<script>
-				$(document).ready(function() {
-					$("#menu-toggle").click(function() {
-							$("#side-nav").fadeToggle(1000);
-					});
-				});
-			</script>
-		</header>
+        <section class="landing">
+            <img src="./img/logo-14.svg" alt="some_text">
+            <h1>Mobile Nav</h1>
+        </section>
 
-		<main>
-			<section class="presentation">
-				<div class="introduction">
-					<div class="intro-text">
-						<h1>Hello</h1>
-            <hr>
-            <h1>Welcome to my Portfolio</h1>
-						<p>
-							 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
-						</p>
-					</div>
-					<div class="cta">
-						<button class="cta-select">CONNECT</button>
-						<!--<button class="cta-add">Add To Cart</button>-->
-					</div>
-				</div>
-				<div class="cover">
-					<img src="./img/matebook.png" alt="matebook" />
-				</div>
-			</section>
-
-		<!--	<div class="laptop-select">
-				<img src="./img/arrow-left.svg" alt="" />
-				<img src="./img/dot.svg" alt="" />
-				<img src="./img/dot-full.svg" alt="" />
-				<img src="./img/dot-full.svg" alt="" />
-				<img src="./img/arrow-right.svg" alt="" />
-			</div>-->
-
-			<img class="big-circle" src="./img/big-eclipse.svg" alt="" />
-			<img class="medium-circle" src="./img/mid-eclipse.svg" alt="" />
-			<img class="small-circle" src="./img/small-eclipse.svg" alt="" />
-		</main>
-	</body>
+        <script src="app.js"></script>
+    </body>
 </html>

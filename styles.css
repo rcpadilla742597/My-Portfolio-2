@@ -1,198 +1,123 @@
 * {
-	margin: 0px;
-	padding: 0px;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-	font-family: 'Poppins', sans-serif;
-}
-button {
-	font-family: 'Poppins', sans-serif;
+    font-family: sans-serif;
 }
 
-header {
-	display: flex;
-	width: 90%;
-	height: 10vh;
-	margin: auto;
-	align-items: center;
-}
-
-.logo-container,
-.nav-links,
-.cart {
-	display: flex;
-}
-
-.logo-container {
-	flex: 1;
-}
-.logo {
-	font-weight: 400;
-	margin: 5px;
-}
 nav {
-	flex: 2;
-	display: none;
-}
-.nav-links {
-	justify-content: space-around;
-	list-style: none;
-}
-.nav-link {
-	color: #5f5f79;
-	font-size: 18px;
-	text-decoration: none;
-}
-.cart {
-	flex: 1;
-	justify-content: flex-end;
+    height: 10vh; /* Size of nav bar */
+    background: #5b78c7;
 }
 
-.presentation {
-	display: flex;
-	width: 90%;
-	margin: auto;
-	min-height: 80vh;
-	align-items: center;
-}
-.introduction {
-	flex: 1;
-}
-.intro-text h1 {
-	font-size: 44px;
-	font-weight: 500;
-	background: linear-gradient(to right, #494964, #6f6f89);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+.nav-links { /* The classs of the ul */
+    display: flex; /* Switches nav-links to display in a row instead of column */
+    list-style: none;
+    width: 50%; /* The width of the ul  */
+    /* background: lightcoral; Background of the ul */
+    height: 100%; /* This makes the nav-links container (light coral) the the same height as our nav */
+    justify-content: space-around; /* Gives space around nav-links horizontally */
+    align-items: center; /* Centers nav-links vertically */
+    margin-left: auto; /* Automatically jumps margin to the right side of the page */
 }
 
-hr {
-	width: 15%;
-  margin: 0;
-  background: tomato;
-  border: none;
-	height: .25rem;
-	border-radius: 2em;
-
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
 }
 
-.intro-text p {
-	margin-top: 5px;
-	font-size: 22px;
-	color: #585772;
-}
-.cta {
-	padding: 50px 0px 0px 0px;
-}
-.cta-select {
-	border: 3px solid tomato;
-	background: transparent;
-	border-radius: 2em;
-	color: #585772;
-	width: 150px;
-	height: 50px;
-	cursor: pointer;
-	font-size: 16px;
-}
-/*.cta-add {
-	background: #c36cbb;
-	width: 150px;
-	height: 50px;
-	cursor: pointer;
-	font-size: 16px;
-	border: none;
-	color: white;
-	margin: 30px 0px 0px 30px;
-}*/
-
-.cover {
-	flex: 1;
-	display: flex;
-	justify-content: center;
-	height: 60vh;
-}
-.cover img {
-	height: 100%;
-	filter: drop-shadow(0px 5px 3px black);
-	animation: drop 1.5s ease;
+.landing {
+    height: 90vh; /* 90vh because the nav is taking up 10vh already. This will still be full screen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.big-circle {
-	position: absolute;
-	top: 0px;
-	right: 0px;
-	z-index: -1;
-	opacity: 0.5;
-	height: 80%;
-}
-.medium-circle {
-	position: absolute;
-	top: 30%;
-	right: 30%;
-	z-index: -1;
-	height: 60%;
-	opacity: 0.4;
-}
-.small-circle {
-	position: absolute;
-	bottom: 0%;
-	left: 20%;
-	z-index: -1;
+.landing h1 {
+    margin: 100px;
+    font-size: 50px;
+    color: #ae5fce;
 }
 
-.laptop-select {
-	width: 15%;
-	display: flex;
-	justify-content: space-around;
-	position: absolute;
-	right: 20%;
-}
+/* Responsiveness happening at 768px */
+@media screen and (max-width: 768px) { /* In the parentheses is where you decide the query will take effect */
+    
+    /* Since I added a position of fixed to the nav-links, I don't have anything in the nav bar anymore. Adding hamburg lines back here */
 
-@keyframes drop {
-	0% {
-		opacity: 0;
-		transform: translateY(-80px);
-	}
-	100% {
-		opacity: 1;
-		transform: translateY(0px);
-	}
-}
+    /* Creating the hamburger lines */
+    .line {
+        width: 30px; /* Width of the line */
+        height: 3px; /* Height of the line */
+        background: white;
+        margin: 5px; /* Gives a margin space of 5px between the lines */
+    }
 
-@media screen and (max-width: 1024px) {
-	.presentation {
-		flex-direction: column;
-	}
-	hr {
-		display: none;
-	}
-	.introduction {
-		margin-top: 5vh;
-		text-align: center;
-	}
-	.intro-text h1 {
-		font-size: 30px;
-	}
-	.intro-text p {
-		font-size: 18px;
-	}
-	.cta {
-		padding: 10px 0px 0px 0px;
-	}
-	.laptop-select {
-		bottom: 5%;
-		right: 50%;
-		width: 50%;
-		transform: translate(50%, 5%);
-	}
-	.cover img {
-		height: 80%;
-	}
-	.small-circle,
-	.medium-circle,
-	.big-circle {
-		opacity: 0.2;
-	}
-}
+    nav {
+        position: relative; /* But if you do give it some other positioning attribute, say, top: 10px;, it will shift its position 10 pixels down from where it would normally be. */
+    }
+
+    .hamburger { /* The lines are in the hamburger */
+        position: absolute; /* Defaults positioning to the parent */
+        cursor: pointer;
+        right: 5%; /* Moves lines to the right 5% */
+        top: 50%; /* Lines are 50% away from the top */
+        transform: translate(-5%, -50%); /* Translates the lines to the middle of the nav background */
+        z-index: 2; /* When nav is open the hamburger lines will show */
+    }
+    
+    .nav-links {
+        position: fixed; /* Position is always relative to the initial containing block */
+        background: #5b78c7;
+        height: 100vh; /* the height will be the size of the viewport */
+        width: 100%; /* The user can switch the screen around so the width needs to be fluid */
+        flex-direction: column; /* Changes the direction of the nav-links from a row (default) to column */
+        
+        /* Creating the mask with clip path */
+        clip-path: circle(100px at 90% -10%); /* Circle is the mask. It shows the blue nav bar behind it. Right - Up */
+        /* This line clip-path does not have full support so I will add the webkit to support it */
+        -webkit-clip-path: circle(100px at 90% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+ /* Creating an open class */
+
+    .nav-links.open {
+      /* Creating the mask with clip path */
+      clip-path: circle(1500px at 90% -10%); /* Circle is the mask. It shows the blue nav bar behind it. Right - Up */
+      /* This line clip-path does not have full support so I will add the webkit to support it */
+      -webkit-clip-path: circle(1500px at 90% -10%);
+      transition: all 1s ease-out;
+      pointer-events: all;
+
+    }
+
+    .landing {
+        flex-direction: column; /* Puts the svg img and Dots in a column */
+    }
+
+    .nav-links li {
+        opacity: 0;
+    }
+
+    .nav-links li a {
+        font-size: 25px;
+    }
+    /* Determines the transitioning and ease of each link */
+    .nav-links li:nth-child(1) {
+        transition: all 0.5s ease 0.2s;
+    }
+    .nav-links li:nth-child(2) {
+        transition: all 0.5s ease 0.4s;
+    }
+    .nav-links li:nth-child(3) {
+        transition: all 0.5s ease 0.6s;
+    }
+    li.fade {
+        opacity: 1;
+    }
+    
+ }
