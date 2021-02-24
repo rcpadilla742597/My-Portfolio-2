@@ -1,123 +1,131 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: sans-serif;
+  font-family: sans-serif;
 }
 
 nav {
-    height: 10vh; /* Size of nav bar */
-    background: #5b78c7;
+  height: 10vh; /* Size of nav bar */
+  background: #5b78c7;
 }
 
-.nav-links { /* The classs of the ul */
-    display: flex; /* Switches nav-links to display in a row instead of column */
-    list-style: none;
-    width: 50%; /* The width of the ul  */
-    /* background: lightcoral; Background of the ul */
-    height: 100%; /* This makes the nav-links container (light coral) the the same height as our nav */
-    justify-content: space-around; /* Gives space around nav-links horizontally */
-    align-items: center; /* Centers nav-links vertically */
-    margin-left: auto; /* Automatically jumps margin to the right side of the page */
+.nav-links {
+  /* The classs of the ul */
+  display: flex; /* Switches nav-links to display in a row instead of column */
+  list-style: none;
+  width: 50%; /* The width of the ul  */
+  /* background: lightcoral; Background of the ul */
+  height: 100%; /* This makes the nav-links container (light coral) the the same height as our nav */
+  justify-content: space-around; /* Gives space around nav-links horizontally */
+  align-items: center; /* Centers nav-links vertically */
+  margin-left: auto; /* Automatically jumps margin to the right side of the page */
 }
 
 .nav-links li a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
 }
 
 .landing {
-    height: 90vh; /* 90vh because the nav is taking up 10vh already. This will still be full screen */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 90vh; /* 90vh because the nav is taking up 10vh already. This will still be full screen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .landing h1 {
-    margin: 100px;
-    font-size: 50px;
-    color: #ae5fce;
+  margin: 100px;
+  font-size: 50px;
+  color: #ae5fce;
 }
 
 /* Responsiveness happening at 768px */
-@media screen and (max-width: 768px) { /* In the parentheses is where you decide the query will take effect */
-    
-    /* Since I added a position of fixed to the nav-links, I don't have anything in the nav bar anymore. Adding hamburg lines back here */
+@media screen and (max-width: 768px) {
+  /* In the parentheses is where you decide the query will take effect */
 
-    /* Creating the hamburger lines */
-    .line {
-        width: 30px; /* Width of the line */
-        height: 3px; /* Height of the line */
-        background: white;
-        margin: 5px; /* Gives a margin space of 5px between the lines */
-    }
+  /* Since I added a position of fixed to the nav-links, I don't have anything in the nav bar anymore. Adding hamburg lines back here */
 
-    nav {
-        position: relative; /* But if you do give it some other positioning attribute, say, top: 10px;, it will shift its position 10 pixels down from where it would normally be. */
-    }
+  /* Creating the hamburger lines */
+  .line {
+    width: 30px; /* Width of the line */
+    height: 3px; /* Height of the line */
+    background: white;
+    margin: 5px; /* Gives a margin space of 5px between the lines */
+  }
 
-    .hamburger { /* The lines are in the hamburger */
-        position: absolute; /* Defaults positioning to the parent */
-        cursor: pointer;
-        right: 5%; /* Moves lines to the right 5% */
-        top: 50%; /* Lines are 50% away from the top */
-        transform: translate(-5%, -50%); /* Translates the lines to the middle of the nav background */
-        z-index: 2; /* When nav is open the hamburger lines will show */
-    }
-    
-    .nav-links {
-        position: fixed; /* Position is always relative to the initial containing block */
-        background: #5b78c7;
-        height: 100vh; /* the height will be the size of the viewport */
-        width: 100%; /* The user can switch the screen around so the width needs to be fluid */
-        flex-direction: column; /* Changes the direction of the nav-links from a row (default) to column */
-        
-        /* Creating the mask with clip path */
-        clip-path: circle(100px at 90% -10%); /* Circle is the mask. It shows the blue nav bar behind it. Right - Up */
-        /* This line clip-path does not have full support so I will add the webkit to support it */
-        -webkit-clip-path: circle(100px at 90% -10%);
-        transition: all 1s ease-out;
-        pointer-events: none;
-    }
- /* Creating an open class */
+  nav {
+    position: relative; /* But if you do give it some other positioning attribute, say, top: 10px;, it will shift its position 10 pixels down from where it would normally be. */
+  }
 
-    .nav-links.open {
-      /* Creating the mask with clip path */
-      clip-path: circle(1500px at 90% -10%); /* Circle is the mask. It shows the blue nav bar behind it. Right - Up */
-      /* This line clip-path does not have full support so I will add the webkit to support it */
-      -webkit-clip-path: circle(1500px at 90% -10%);
-      transition: all 1s ease-out;
-      pointer-events: all;
+  .hamburger {
+    /* The lines are in the hamburger */
+    position: absolute; /* Defaults positioning to the parent */
+    cursor: pointer;
+    right: 5%; /* Moves lines to the right 5% */
+    top: 50%; /* Lines are 50% away from the top */
+    transform: translate(
+      -5%,
+      -50%
+    ); /* Translates the lines to the middle of the nav background */
+    z-index: 2; /* When nav is open the hamburger lines will show */
+  }
 
-    }
+  .nav-links {
+    position: fixed; /* Position is always relative to the initial containing block */
+    background: #5b78c7;
+    height: 100vh; /* the height will be the size of the viewport */
+    width: 100%; /* The user can switch the screen around so the width needs to be fluid */
+    flex-direction: column; /* Changes the direction of the nav-links from a row (default) to column */
 
-    .landing {
-        flex-direction: column; /* Puts the svg img and Dots in a column */
-    }
+    /* Creating the mask with clip path */
+    clip-path: circle(
+      100px at 90% -10%
+    ); /* Circle is the mask. It shows the blue nav bar behind it. Right - Up */
+    /* This line clip-path does not have full support so I will add the webkit to support it */
+    -webkit-clip-path: circle(100px at 90% -10%);
+    transition: all 1s ease-out;
+    pointer-events: none;
+  }
+  /* Creating an open class */
 
-    .nav-links li {
-        opacity: 0;
-    }
+  .nav-links.open {
+    /* Creating the mask with clip path */
+    clip-path: circle(
+      1500px at 90% -10%
+    ); /* Circle is the mask. It shows the blue nav bar behind it. Right - Up */
+    /* This line clip-path does not have full support so I will add the webkit to support it */
+    -webkit-clip-path: circle(1500px at 90% -10%);
+    transition: all 1s ease-out;
+    pointer-events: all;
+  }
 
-    .nav-links li a {
-        font-size: 25px;
-    }
-    /* Determines the transitioning and ease of each link */
-    .nav-links li:nth-child(1) {
-        transition: all 0.5s ease 0.2s;
-    }
-    .nav-links li:nth-child(2) {
-        transition: all 0.5s ease 0.4s;
-    }
-    .nav-links li:nth-child(3) {
-        transition: all 0.5s ease 0.6s;
-    }
-    li.fade {
-        opacity: 1;
-    }
-    
- }
+  .landing {
+    flex-direction: column; /* Puts the svg img and Dots in a column */
+  }
+
+  .nav-links li {
+    opacity: 0;
+  }
+
+  .nav-links li a {
+    font-size: 25px;
+  }
+  /* Determines the transitioning and ease of each link */
+  .nav-links li:nth-child(1) {
+    transition: all 0.5s ease 0.2s;
+  }
+  .nav-links li:nth-child(2) {
+    transition: all 0.5s ease 0.4s;
+  }
+  .nav-links li:nth-child(3) {
+    transition: all 0.5s ease 0.6s;
+  }
+  li.fade {
+    opacity: 1;
+  }
+}
