@@ -1,18 +1,3 @@
-/* From lesson
-
-let userI = prompt("Enter your namme");
-
-let obj = {
-    name: userI
-};
-
-
-async function postData() {
-    const response = await fetch("https://test-295e7-default-rtdb.firebaseio.com/post/.json", { method: "POST", body: JSON.stringify(obj) });
-}
-postData();
-*/
-
 // Your web app's Firebase configuration
 var firebaseConfig = {
     apiKey: "AIzaSyBKF11oVlR327fvNYmlB449yHW4WWRzV6Q",
@@ -50,15 +35,15 @@ function submitForm(e){
     // Save message
     saveMessage(fname, lname, company, email, phone, message);
 
-    //Show alert when submitting
+    // Show alert when submit
     document.querySelector('.alert').style.display = 'block';
 
-    //Hide alert after 3 seconds
+    // Hide alert after 3 seconds
     setTimeout(function(){
         document.querySelector('.alert').style.display = 'none';
     }, 3000);
     
-    // Clears the form
+    // Clears the form after submission
     document.getElementById('contactForm').reset();
 }
 
@@ -82,8 +67,6 @@ function saveMessage(fname, lname, company, email, phone, message) {
         message:message
     });
 }
-
-
 
 // Hamburger menu
 const hamburger = document.querySelector('.hamburger'); /* Matches the first element within the document that matches the specified selector. I am setting hamburger to the querySelector */
