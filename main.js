@@ -1,8 +1,10 @@
-// This code work well for a company that needs to retrieve data from using an API
+// This code work well for a company that needs to retrieve data from using a rest API
+
+// Create an async function that does not execute line by line like a sync function. Async function postContactForm is being passed the key words. The response of this function written in the parameters is await fetch from the firebase messages endpoint. I can change the end point to anything and firebase will create it when the info is posted (create). It will read it as a json file.
 
 async function postContactForm(fname, lname, company, email, phone, message) {
     const response = await fetch("https://contactform-portfolio-65fc3-default-rtdb.firebaseio.com/messages.json", {
-        method: "POST",
+        method: "POST",  // This method creates info inputed and stringifys the values in JSON format
         body: JSON.stringify({
             fname: fname,
             lname: lname,
@@ -14,7 +16,7 @@ async function postContactForm(fname, lname, company, email, phone, message) {
     })
 }
 
-document.getElementById('contactForm').addEventListener('submit', submitForm);
+document.getElementById('contactForm').addEventListener('submit', submitForm); 
 
 // Creating a function called submitForm that has an eventListener asssigned to it. When you submit the form, the function saveMessage will save what is inputed into the fields
 
@@ -44,18 +46,12 @@ function submitForm(e) {
     document.getElementById('contactForm').reset();
 }
 
-
-
-
 // Creating a function to get form values. I don't have to keep writting document.getElementById for each field.
 
 function getInputVal(id) {
     return document.getElementById(id).value;
     // I just want the value that's put into the field.
 }
-
-
-
 
 // Hamburger menu
 const hamburger = document.querySelector('.hamburger'); /* Matches the first element within the document that matches the specified selector. I am setting hamburger to the querySelector */
